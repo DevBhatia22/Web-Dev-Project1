@@ -1,0 +1,17 @@
+button{
+    outline: none;
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+.headDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+.levelDiv{
+    display: flex;
+    flex-direction: column;
+}
