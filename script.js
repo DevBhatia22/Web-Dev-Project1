@@ -43,5 +43,6 @@ const start = () => {
         "negMark" : negMark,
     }
     localStorage.setItem("game" , JSON.stringify(gameStat));
+    window.location.href = "game.html";
 }
 
