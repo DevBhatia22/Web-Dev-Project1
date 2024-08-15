@@ -34,3 +34,14 @@ const changeDisplay = () => {
     display.append(childLevel, childNegMark);
 }
 changeDisplay();
+
+//start game forwarder
+
+const start = () => {
+    let gameStat = {
+        "level" : level,
+        "negMark" : negMark,
+    }
+    localStorage.setItem("game" , JSON.stringify(gameStat));
+}
+
