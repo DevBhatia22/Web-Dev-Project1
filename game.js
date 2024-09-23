@@ -1,6 +1,13 @@
 let score = 0;
 let questionNumber = 1;
 //question function factory
+let ct = 0;
+let time = document.querySelector("#time");
+setInterval(() => {
+    ct++;
+    time.textContent = `${ct} s`;
+}, 1000);
+
 
 const gameStat = JSON.parse(localStorage.game);
 const quesFactory = () => {
@@ -79,10 +86,22 @@ const quesFactory = () => {
     return ques;
 }
 
+let changeScore = (score) => {
+    return new Promise((res, rej) => {
+        try{
+            document.querySelector("#Score").textContent = `${score}`;
+            res("Score Changed");
+        }
+        catch{
+            rej("Score Didn't change");
+        }
+    })
+}
+
 const question = document.querySelector(".question");
 let prob = quesFactory();
 question.textContent = `${prob.var1} ${prob.op == "%"?"% of":prob.op} ${prob.var2}`;
-const genrateQuestion = () => {
+const genrateQuestion = async() => {
     let answer = document.querySelector(".answer");
     if(prob.answer == answer.value){
         score += 10;
@@ -90,9 +109,45 @@ const genrateQuestion = () => {
     else if(gameStat.negMark){
         score -= 10;
     }
-    console.log(score);
+    
+    try{
+        let res = await changeScore(score);
+        console.log(res);
+    }
+    catch(err){
+        console.log(err);
+    }
+    
     answer.value = "";
+    if(questionNumber == 10) changeToScorePage(score);
     prob = quesFactory();
-    document.querySelector(".qn").textContent = `Current Number of Question : ${++questionNumber}`
+    document.querySelector(".qn").textContent = `Current Number of Question : ${++questionNumber} / 10`
     question.textContent = `${prob.var1} ${prob.op == "%"?"% of":prob.op} ${prob.var2}`;
+}
+
+let changeToScorePage = (score) => {
+    try{
+        let temp = JSON.parse(localStorage[gameStat.level]);
+        let date = new Date;
+        let newScore = {
+            "date" : "" + date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear(),
+            "score" : score,
+            "time" : ct
+        }
+        temp.push(newScore);
+        localStorage.setItem(gameStat.level, JSON.stringify(temp));
+    }
+    catch{
+        let date = new Date;
+        const temp = [
+            {
+                "date" : "" + date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear(),
+                "score" : score,
+                "time" : ct
+            }
+        ]
+        console.log(temp);
+        localStorage.setItem(gameStat.level , JSON.stringify(temp));
+    }
+    window.location.href = "result.html";
 }

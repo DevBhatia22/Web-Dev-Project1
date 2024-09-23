@@ -8,12 +8,19 @@
 </head>
 <body>
     <div class = "displayer">
-        <div class = "headDiv qn">
-            Current Number of Question : 1
+        <div class = "headDiv">
+            <div>Time : <span id = "time">0</span></div>
         </div>
-        <div class = "headDiv question">
-            Question
+        <div class = "headDiv">
+            Current Score : <span id="Score">0</span>
         </div>
+        <div class = "headDiv">
+            <span class="qn">Current Number of Question : 1 / 10</span>
+            <div class = "headDiv question">
+                Question
+            </div>
+        </div>
+        
         <div class = "headDiv">
             <input class = "answer" type="number"/>
             <button onclick="genrateQuestion()"> Next </button>
@@ -21,6 +28,7 @@
         <div class = "headDiv">
             <a href = "index.html"> Break </a>
         </div>
+        
     </div>
     <script src="game.js"></script>
 </body>
