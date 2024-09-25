@@ -1,10 +1,9 @@
-/* Global body styling */
 *{
     box-sizing: border-box;
 }
 body {
-    background-color: #0D0D0D; /* Dark background */
-    color: #D8BFD8; /* Soft violet text */
+    background-color: #0D0D0D;
+    color: #D8BFD8;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -15,78 +14,70 @@ body {
     box-sizing: border-box;
 }
 
-/* Main container styling */
 .headDiv {
-    background-color: #1C1C1C; /* Dark background for main content */
+    background-color: #1C1C1C;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7); /* Neumorphism shadow */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
     text-align: center;
     width: 100%;
     max-width: 800px;
 }
 
-/* Current score box styling */
 #currentScore {
     background-color: #292929;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5); /* Inset shadow */
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Past scores title */
 #pastScores > div:first-child {
     font-size: 1.5em;
     font-weight: bold;
-    color: #EE82EE; /* Bright violet */
+    color: #EE82EE;
     margin-bottom: 15px;
 }
 
-/* Styling for dynamically generated mainDiv */
 .mainDiv {
-    background-color: #1F1F1F; /* Darker background */
+    background-color: #1F1F1F;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Slight shadow */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column-reverse;
 }
 
-/* Hover effect for mainDiv */
 .mainDiv:hover {
     background-color: #333333;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8); /* More prominent shadow on hover */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* Styling for eles container */
 .eles {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    /* display: flex; */
 }
 
-/* Individual elements inside eles */
 .ele {
     padding: 10px;
     width: 30%;
     text-align: center;
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4); /* Inset shadow */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 button {
-    background-color: #6A0DAD; /* Dark violet background for buttons */
+    background-color: #6A0DAD;
     color: white;
     border: none;
-    border-radius: 50px; /* Fully rounded buttons */
+    border-radius: 50px;
     padding: 12px 25px;
     cursor: pointer;
     font-size: 1rem;
-    transition: all 0.3s ease; /* Smooth transitions */
+    transition: all 0.3s ease;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 button:active {
@@ -94,6 +85,6 @@ button:active {
     box-shadow: none;
 }
 button:hover {
-    background-color: #9400D3; /* Lighter violet on hover */
-    transform: scale(1.05); /* Slight scale effect on hover */
+    background-color: #9400D3;
+    transform: scale(1.05);
 }
